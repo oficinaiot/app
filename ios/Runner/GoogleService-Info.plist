@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>958738600099-7258so8qe0oeouf7kbvbrnu54je8qi92.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.958738600099-7258so8qe0oeouf7kbvbrnu54je8qi92</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCgX1yYCwQJz3mGkpHqkiOjSN8D1YT1kmQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>958738600099</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.oneplanet.adestrakit</string>
+	<key>PROJECT_ID</key>
+	<string>adestrakit</string>
+	<key>STORAGE_BUCKET</key>
+	<string>adestrakit.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:958738600099:ios:bc7c557eca394a0a756f16</string>
+	<key>DATABASE_URL</key>
+	<string>https://adestrakit.firebaseio.com</string>
+</dict>
+</plist>

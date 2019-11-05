@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "958738600099",
+    "firebase_url": "https://adestrakit.firebaseio.com",
+    "project_id": "adestrakit",
+    "storage_bucket": "adestrakit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:958738600099:android:48f2cde2fafb251c756f16",
+        "android_client_info": {
+          "package_name": "com.oneplanet.adestrakit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "958738600099-q4tjc99jknhd4te2k2hct2kjcsq3uj2s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3R3Jb4xIVxCi9A8AfQNCbEgocQW4x8eo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "958738600099-q4tjc99jknhd4te2k2hct2kjcsq3uj2s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
