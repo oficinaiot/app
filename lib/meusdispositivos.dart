@@ -1,3 +1,4 @@
+import 'package:adestrakit/layout.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,7 @@ class _MeusDispositivosState extends State<MeusDispositivos> {
   FirebaseAuth _auth = FirebaseAuth.instance;
   FirebaseUser _user;
   DatabaseReference itemRef;
+  Map<String, dynamic> dispositivos1 = Map();
 
   Future<FirebaseUser> getCurrentUser() async {
     FirebaseUser user = await _auth.currentUser();
@@ -35,7 +37,14 @@ class _MeusDispositivosState extends State<MeusDispositivos> {
     //    Query usuarioPesquisa = dispositivos.child(_user.uid);
        // Query usuarioPesquisa = dispositivos.orderByKey().limitToFirst(2);
         usuarioPesquisa.once().then((DataSnapshot snapshot) {
-          print('Connected and read ${snapshot.value}');
+          Map map = Map();
+          map = snapshot.value;
+          setState(() {
+          map.forEach((key,value){
+            print(key);
+            dispositivos1[key]=value;
+          });
+          });
         });
 
 
@@ -49,18 +58,26 @@ class _MeusDispositivosState extends State<MeusDispositivos> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Meus Dispositivos"),
-        actions: <Widget>[
-          FlatButton(
-            textColor: Colors.white,
-            onPressed: (){
-//              Navigator.push(
-//                  context, MaterialPageRoute(builder: (context) => destino));
-            },
-            child: Text("Registrar"),
-          )
-        ],
       ),
-      body: Column(),
+      body: ListView.builder(
+          itemCount: dispositivos1.length,
+          itemBuilder: (BuildContext context,int index){
+            return Card(
+              elevation: 3.0,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: <Widget>[
+                      Layout().titulo('Dispositivo'),
+                      Text('Nome: ${dispositivos1.values.toList()[index]['nomeAdestra']}'),
+                      Text('Local: ${dispositivos1.values.toList()[index]['localAdestra']}'),
+                      Text('Distância Alerta: ${dispositivos1.values.toList()[index]['distanciaLimite']}'),
+                      Text('${dispositivos1.keys.toList()[index]}'),
+                    ],
+                  ),
+                ));
+          },
+          ),
     );
   }
 }

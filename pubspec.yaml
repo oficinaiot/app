@@ -29,6 +29,7 @@ dependencies:
   connectivity: ^0.4.5+2
   firebase_auth: ^0.14.0+5
   firebase_database: ^3.0.7
+  syncfusion_flutter_charts: ^17.3.14
 flutter_icons:
   image_path_android: "images/medal.png"
   image_path_ios: "images/medal.png"

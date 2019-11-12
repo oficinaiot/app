@@ -39,7 +39,7 @@ class _WifiState extends State<Wifi> {
   String wifiip;
   String rede;
   String _connectionStatus = 'Unknown';
-  bool encontroudispositivo = true;
+  bool encontroudispositivo = false;
   bool redewifi = false;
 
   String senhaenviada, dispositivoid, nome, local, distancia;
@@ -65,7 +65,6 @@ class _WifiState extends State<Wifi> {
   TextEditingController cnome = TextEditingController();
   TextEditingController clocal = TextEditingController();
   TextEditingController cdistancia = TextEditingController();
-  TextEditingController csenha = TextEditingController();
   TextEditingController crede = TextEditingController();
 
   bool configurado = false;
@@ -179,7 +178,7 @@ class _WifiState extends State<Wifi> {
   }
 
   submitwifi() {
-    var wifidata = "${crede.text},${senha.text},${csenha.text},${cnome.text},${clocal.text},${cdistancia.text},${_user.uid}";
+    var wifidata = "${crede.text},${senha.text},aeiou,${cnome.text},${clocal.text},${cdistancia.text},${_user.uid}";
     writeData(wifidata);
   }
 
@@ -265,10 +264,6 @@ class _WifiState extends State<Wifi> {
                                   "Distância de alerta - Sinal Luminoso"),
                               Layout().caixadetexto(
                                   cdistancia, "Distância em centímetros"),
-                              Layout().titulo(
-                                  "Senha de acesso ao dispositivo"),
-                              Layout().caixadetexto(
-                                  csenha, "Especial para compartilhamento"),
                               Padding(
                                 padding: const EdgeInsets.all(10.0),
                                 child: InkWell(
@@ -284,12 +279,6 @@ class _WifiState extends State<Wifi> {
                                           context,
                                           "Distância de alerta",
                                           "Escreva a distancia que o cachorro pode se aproximar do dispositivo até o acionamento");
-                                    }
-                                    else if (csenha.text.isEmpty) {
-                                      Layout().dialog1botao(
-                                          context,
-                                          "Senha de acesso",
-                                          "Escreva uma senha de acesso ao dispositivo.");
                                     }
                                     else {
                                       FocusScope.of(context).requestFocus(FocusNode());
@@ -391,7 +380,7 @@ class _WifiState extends State<Wifi> {
                               child: Column(
                                 children: <Widget>[
                                   Layout().secao("Quase Pronto"),
-                                  Layout().titulo("Aperte o botão de RESET na parte superior do dispositivo e aguarde a luz indicativa ficar verde."),
+                                  Layout().titulo("Aperte o botão de RESET na parte superior do dispositivo e aguarde a luz indicativa ficar verde e parar de piscar.\n\n A luz verde piscando, indica que o dispositivo está tentando conectar à rede. Caso a luz não estabilize, repita esta procedimento."),
 
                                   Padding(
                                     padding: const EdgeInsets.all(10.0),
@@ -407,7 +396,7 @@ class _WifiState extends State<Wifi> {
                                             padding: const EdgeInsets.all(
                                                 12.0),
                                             child: Text(
-                                              'A luz está verde',
+                                              'A luz está verde e parou de piscar',
                                               textAlign: TextAlign.center,
                                             ),
                                           )),
